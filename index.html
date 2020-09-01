@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="unitChange">
+            <button id="metric">°C | Km/h</button>
+            <button id="imperial">°F | Mp/h</button>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="search">
+            <form>
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Search City"
+              />
+              <button id="search-button"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <h1 id="city">Seoul</h1>
+        <h3 id="hour-date">
+          16:11 Sunday
+          <br />
+          16.11.2020
+        </h3>
+        <h3 id="temperature">20°c</h3>
+        <hr />
+
+        <ul class="moreInfo">
+          <li id="real-feel">Real Feel: 18°c</li>
+          <li id="humidity">Humidity: 15%</li>
+          <li id="wind-speed">Wind: 16 km/h</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
