@@ -1,0 +1,120 @@
+body {
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 35px;
+  border: transparent;
+  border-radius: 50px;
+  padding: -15px;
+  font-family: roboto Mono;
+}
+
+button {
+  border: transparent;
+}
+
+h1 {
+  padding: 5px;
+  font-size: 65px;
+  margin-top: 25px;
+  background-color: rgba(255, 255, 255, 0.26);
+  text-align: center;
+  display: inline-table;
+}
+
+hr {
+  max-width: 50%;
+  background-color: rgba(255, 255, 255, 0.26);
+}
+
+li {
+  line-height: 2px;
+  padding: 5px;
+}
+
+div .container {
+  background-image: url(background.jpg);
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+div .unitChange {
+  text-align: left;
+  margin: 10px;
+  background-color: transparent;
+}
+
+div .search {
+  text-align: right;
+}
+
+div .main {
+  text-align: center;
+  line-height: 5px;
+  padding: 10px;
+}
+
+div .moreInfo {
+  text-align: center;
+  max-width: 55%;
+  margin: 0 auto;
+  padding: 25px;
+  font-size: 15px;
+  list-style: none;
+  line-height: 5px;
+}
+
+#metric,
+#imperial {
+  padding: 2px;
+  font-size: 10px;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.26);
+}
+
+#search-button {
+  text-align: right;
+  display: inline;
+  background-color: transparent;
+  border: transparent;
+}
+
+#search-input {
+  text-align: right;
+  display: inline;
+  margin: 10px;
+  border: transparent;
+  background-color: transparent;
+}
+
+#hour-date {
+  font-size: 18px;
+  margin-top: -5px;
+  background-color: rgba(255, 255, 255, 0.26);
+  width: 180px;
+  margin: 0 auto;
+}
+
+#temperature {
+  margin: 20px;
+  font-size: 90px;
+  background-color: rgba(255, 255, 255, 0.26);
+  display: inline-table;
+}
+
+#real-feel {
+  padding: 10px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.26);
+}
+
+#humidity {
+  padding: 10px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.26);
+}
+
+#wind-speed {
+  padding: 10px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.26);
+}
