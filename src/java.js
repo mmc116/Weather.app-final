@@ -1,3 +1,6 @@
+let locationButton = document.querySelector("#current-location");
+locationButton.addEventListener("click", getPosition);
+
 function showTime() {
   let now = new Date();
   let hourDate = document.querySelector("#hour-date");
@@ -30,11 +33,21 @@ function showLocationWeather(response) {
   let wind = document.querySelector("#wind-speed");
   let humidity = document.querySelector("#humidity");
   let real = document.querySelector("#real-feel");
+  let weatherIcon = document.querySelector("#icon");
+  let weatherDescription = document.querySelector("#description");
+  celciusTemp = response.data.main.temp;
+  kmSpeed = response.data.wind.speed;
+  realFeel = response.data.main.feels_like;
   h1.innerHTML = `${cityName}`;
-  temp.innerHTML = `${temperature}°`;
-  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}km/h`;
+  temp.innerHTML = `${Math.round(celciusTemp)}°`;
+  wind.innerHTML = `Wind: ${Math.round(kmSpeed)}km/h`;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  real.innerHTML = `Real Feel: ${Math.round(response.data.main.feels_like)}°c`;
+  real.innerHTML = `Real Feel: ${Math.round(realFeel)}°c`;
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherDescription.innerHTML = `${responde.data.weather[0].description}`;
 }
 function getLocationWeather(position) {
   let lat = position.coords.latitude;
@@ -57,11 +70,14 @@ function searchedCityTemperature(response) {
   let wind = document.querySelector("#wind-speed");
   let humidity = document.querySelector("#humidity");
   let real = document.querySelector("#real-feel");
+  celciusTemp = response.data.main.temp;
+  kmSpeed = response.data.wind.speed;
+  realFeel = response.data.main.feels_like;
   city.innerHTML = `${response.data.name}`;
-  temp.innerHTML = `${Math.round(response.data.main.temp)}°`;
-  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}km/h`;
+  temp.innerHTML = `${Math.round(celciusTemp)}°`;
+  wind.innerHTML = `Wind: ${Math.round(kmSpeed)}km/h`;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  real.innerHTML = `Real Feel: ${Math.round(response.data.main.feels_like)}°c`;
+  real.innerHTML = `Real Feel: ${Math.round(realFeel)}°c`;
 }
 
 function getCityTemperature(event) {
@@ -77,3 +93,39 @@ function getCityTemperature(event) {
 let searchCity = document.querySelector("#search-button");
 searchCity.addEventListener("click", getCityTemperature);
 navigator.geolocation.getCurrentPosition(getLocationWeather);
+
+let celciusTemp = null;
+let kmSpeed = null;
+let realFeel = null;
+
+function convertImperial(event) {
+  event.preventDefault();
+  let degrees = document.querySelector("#temperature");
+  let speed = document.querySelector("#wind-speed");
+  let feelLike = document.querySelector("#real-feel");
+  let fahrenheit = (celciusTemp * 9) / 5 + 32;
+  let milesPer = kmSpeed / 1.609;
+  let feelsLike = (realFeel * 9) / 5 + 32;
+  degrees.innerHTML = `${Math.round(fahrenheit)}°`;
+  speed.innerHTML = `Wind: ${Math.round(milesPer)}Mp/h`;
+  feelLike.innerHTML = `Real Feel: ${Math.round(feelsLike)}°f`;
+}
+
+let imperial = document.querySelector("#imperial");
+imperial.addEventListener("click", convertImperial);
+
+function convertMetric(event) {
+  event.preventDefault();
+  let degrees = document.querySelector("#temperature");
+  let speed = document.querySelector("#wind-speed");
+  let feelLike = document.querySelector("#real-feel");
+  let celcius = celciusTemp;
+  let kmPer = kmSpeed;
+  let feelsLike = realFeel;
+  degrees.innerHTML = `${Math.round(celcius)}°`;
+  speed.innerHTML = `Wind: ${Math.round(kmPer)}Km/h`;
+  feelLike.innerHTML = `Real Feel: ${Math.round(feelsLike)}°c`;
+}
+
+let metric = document.querySelector("#metric");
+metric.addEventListener("click", convertMetric);

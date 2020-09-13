@@ -19,6 +19,15 @@ h1 {
   text-align: center;
   display: inline-table;
   text-transform: capitalize;
+  border-radius: 2px;
+}
+
+h5 {
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.26);
+  display: inline-table;
+  text-transform: capitalize;
+  border-radius: 2px;
 }
 
 hr {
@@ -40,12 +49,6 @@ li {
   border-radius: 10px;
 }
 
-.unitChange {
-  text-align: left;
-  margin: 10px;
-  background-color: transparent;
-}
-
 .search {
   text-align: right;
 }
@@ -64,6 +67,21 @@ li {
   font-size: 12px;
   list-style: none;
   line-height: 5px;
+}
+
+#current-location,
+#metric,
+#imperial {
+  text-align: left;
+  margin: 5px;
+  margin-left: -5px;
+  margin-top: 10px;
+  border-radius: 2px;
+  display: block;
+  font-size: 10px;
+  font-family: inherit;
+
+  background-color: rgba(255, 255, 255, 0.26);
 }
 
 #search-button {
@@ -87,6 +105,7 @@ li {
   background-color: rgba(255, 255, 255, 0.26);
   width: 180px;
   margin: 0 auto;
+  border-radius: 2px;
 }
 
 #temperature {
@@ -94,22 +113,26 @@ li {
   font-size: 90px;
   background-color: rgba(255, 255, 255, 0.26);
   display: inline-table;
+  border-radius: 2px;
 }
 
 #real-feel {
   padding: 10px;
   margin: 15px;
   background-color: rgba(255, 255, 255, 0.26);
+  border-radius: 2px;
 }
 
 #humidity {
   padding: 10px;
   margin: 15px;
   background-color: rgba(255, 255, 255, 0.26);
+  border-radius: 2px;
 }
 
 #wind-speed {
   padding: 10px;
   margin: 15px;
   background-color: rgba(255, 255, 255, 0.26);
+  border-radius: 2px;
 }

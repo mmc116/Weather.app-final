@@ -26,25 +26,9 @@
     <div class="container">
       <div class="row">
         <div class="col-sm">
-          <nav class="menu">
-            <input
-              type="checkbox"
-              href="#"
-              class="menu-open"
-              name="menu-open"
-              id="menu-open"
-            />
-            <label class="menu-open-button" for="menu-open">
-              <span class="hamburger hamburger-1"></span>
-              <span class="hamburger hamburger-2"></span>
-              <span class="hamburger hamburger-3"></span>
-            </label>
-            <a href="#" class="menu-item" id="metric">°C | Km/h</a>
-            <a href="#" class="menu-item" id="imperial">°F | Mp/h</a>
-            <a href="#" class="menu-item" id="current-location"
-              >Current Location</a
-            >
-          </nav>
+          <button id="current-location">Current Location</button>
+          <button id="metric">C | Km/h</button>
+          <button id="imperial">F | Mp/h</button>
         </div>
         <div class="col-sm">
           <div class="search">
@@ -63,9 +47,13 @@
       <div class="main">
         <h1 id="city">Tokyo</h1>
         <h3 id="hour-date">16:11 Sunday 16.11.2020</h3>
-        <h3 id="temperature">20°c</h3>
+        <h3 id="temperature">
+          20°c
+          <img src="" alt="" id="icon" />
+        </h3>
+        <br />
+        <h5 id="description">Clear</h5>
         <hr />
-
         <ul class="moreInfo">
           <li id="real-feel">Real Feel: 18°c</li>
           <li id="humidity">Humidity: 15%</li>
