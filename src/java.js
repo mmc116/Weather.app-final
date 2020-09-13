@@ -34,7 +34,7 @@ function showLocationWeather(response) {
   let humidity = document.querySelector("#humidity");
   let real = document.querySelector("#real-feel");
   let weatherIcon = document.querySelector("#icon");
-  let weatherDescription = document.querySelector("#description");
+  let weatherDescription = document.querySelector("h5");
   celciusTemp = response.data.main.temp;
   kmSpeed = response.data.wind.speed;
   realFeel = response.data.main.feels_like;
@@ -47,7 +47,7 @@ function showLocationWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  weatherDescription.innerHTML = `${responde.data.weather[0].description}`;
+  weatherDescription.innerHTML = `${response.data.weather[0].description}`;
 }
 function getLocationWeather(position) {
   let lat = position.coords.latitude;
@@ -70,6 +70,8 @@ function searchedCityTemperature(response) {
   let wind = document.querySelector("#wind-speed");
   let humidity = document.querySelector("#humidity");
   let real = document.querySelector("#real-feel");
+  let weatherIcon = document.querySelector("#icon");
+  let weatherDescription = document.querySelector("h5");
   celciusTemp = response.data.main.temp;
   kmSpeed = response.data.wind.speed;
   realFeel = response.data.main.feels_like;
@@ -78,6 +80,11 @@ function searchedCityTemperature(response) {
   wind.innerHTML = `Wind: ${Math.round(kmSpeed)}km/h`;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   real.innerHTML = `Real Feel: ${Math.round(realFeel)}°c`;
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherDescription.innerHTML = `${response.data.weather[0].description}`;
 }
 
 function getCityTemperature(event) {
